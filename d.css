@@ -1,0 +1,20 @@
+* {
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 10%;
+}
+
+#clock {
+  font-size: 168px;
+  text-align: center;
+}
+
+#total {
+  text-align: right;
+  margin-right: 60px;
+}
