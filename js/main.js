@@ -1,7 +1,9 @@
-var title, clock, total;
+var title, clock, total, interval;
 
 // Get the elements that will display the results from the HTML
 var container = document.getElementById('container');
+var img = document.getElementById('img');
+img.style.display = "none";
 
 // Get the query string
 var s = window.location.search.substring(1).split('&');

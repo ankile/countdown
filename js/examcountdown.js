@@ -21,20 +21,37 @@ function examCountdown(subjectName, date) {
   var timeLeft = examDate - now;
   var blink = false;
   var daysLeft;
-
   function update() {
+
+    console.log(timeLeft);
+
+    if (timeLeft < 0) {
+      clearInterval(interval);
+      setImage();
+    }
+
     daysLeft = "" + Math.ceil(timeLeft / 86400000);
     if (blink) {
       daysLeft += ":";
     }
     clock.innerHTML = daysLeft;
     timeLeft -= 1000;
-    if (timeLeft < 0) {
-      clearInterval(interval);
-    }
     blink = !blink;
   }
 
+  function setImage() {
+    total.style.display = "none";
+    title.style.display = "none";
+    clock.style.display = "none";
+    img.style.display = "block";
+    interval = setInterval(setNewImage, 10*3600*1000);
+  }
+
+  function setNewImage() {
+    img.src = "img/img_2.jpg";
+    clearInterval(interval);
+  }
+
   update();
-  var interval = setInterval(update, 1000);
+  interval = setInterval(update, 1000);
 }
